@@ -26,17 +26,14 @@ names=[]
 #calling the function to create the sample names 
 for i in range(0,length):
     x=nameGenerator()
-    names += [x]                            #adding the generated names to a list 
+    names += [x]                            #adding the generated names to a list   
 
 #to create a dataframe from the lists making a dictionary first\n",
 dictionary={'CustomerID':C_ID,'Name':names}
 
 sampledf=pd.DataFrame(dictionary)
-print(sampledf)
 
 sampledf.to_csv('data_sets/createdDF.csv',index=False)
-
-
 '''
 header=['CustomerID','Name']
 #to write the created dataframe to a csv file
