@@ -1,14 +1,3 @@
-'''
-    length=len(df.Keyword)
-    #print(length)
-    for i in range(1,length+1):
-        keyword=obj.data[i]['Keyword']
-        
-
-#Keyword,Country,Difficulty,Volume,CPC,CPS,Parent Keyword,Last Update,SERP Features,Global volume,Traffic potential
-    
-'''
-
 import csv
 import pandas as pd
 df=pd.read_csv('data_sets/grpr_input.csv')
@@ -18,7 +7,7 @@ with open('data_sets/grpr_input.csv','r') as f:
     reader=csv.DictReader(f)
     data=list(reader)
 #print(data[0]['Keyword'])
-
+#Names of Coloumns:Keyword,Country,Difficulty,Volume,CPC,CPS,Parent Keyword,Last Update,SERP Features,Global volume,Traffic potential
 
 class Node:
     keyword=None
@@ -27,14 +16,14 @@ class Node:
     volume=None
     cpc=None
     cps=None
-    pkey=None
-    lUpdate=None
-    serp=None
-    gVol=None
-    traffic=None
+    parent_keyword=None
+    last_update=None
+    serp_features=None
+    global_volume=None
+    traffic_potential=None
     
 li=[]
-for i in range(0,5):
+for i in range(0,length):
     obj=Node()
     obj.keyword=data[i]['Keyword']
     obj.country=data[i]['Country']
@@ -42,11 +31,11 @@ for i in range(0,5):
     obj.volume=data[i]['Volume']
     obj.cpc=data[i]['CPC']
     obj.cps=data[i]['CPS']
-    obj.pkey=data[i]['Parent Keyword']
-    obj.lUpdate=data[i]['Last Update']
-    obj.serp=data[i]['SERP Features']
-    obj.gVol=data[i]['Global volume']
-    obj.traffic=data[i]['Traffic potential']
+    obj.parent_keyword=data[i]['Parent Keyword']
+    obj.last_update=data[i]['Last Update']
+    obj.serp_features=data[i]['SERP Features']
+    obj.global_volume=data[i]['Global volume']
+    obj.traffic_potential=data[i]['Traffic potential']
     li.append(obj)
 
-print(li[3].keyword)
+#print(li[3].keyword)
