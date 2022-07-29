@@ -1,5 +1,6 @@
 import csv
 import pandas as pd
+import re
 
 df=pd.read_csv('data_sets/grpr_input.csv')            #41902
  
@@ -14,4 +15,12 @@ df.CPC.fillna(value=1,inplace=True)
 df.CPS.fillna(value=0.1,inplace=True)
 #print(df[['CPC','CPS']])
 
-df.to_csv('data_sets/output_grpr.csv',index=False)
+#if coloumn values are having a range then to replace them with maximum value:
+#column=pd.Series(df.column_name)
+
+#cleaned=column.str.extract(pat= '(\d+$)')
+
+#df=df.assign(column_name = cleaned)
+print(df)
+
+#df.to_csv('data_sets/output_grpr.csv',index=False)
