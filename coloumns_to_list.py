@@ -1,5 +1,6 @@
 import pandas as pd
 import csv
+
 #will store multiple links for 1 keyword as a list
 data = pd.read_csv('data_sets/group_input_new.csv')
 #print(data)
@@ -37,9 +38,7 @@ data['links']=list_of_links
 print(data)
 
 #writing the requires result to a csv file
-data.to_csv('data_sets/group_output_news.csv')
-
-
+#data.to_csv('data_sets/group_output_news.csv')
 
 #>Task:storing the output data as a node structure
 df=pd.read_csv('data_sets/group_output_news.csv')
@@ -63,5 +62,6 @@ for i in range(0,length):
     obj.keyword=data_frame[i]['Keyword']
     obj.volume=data_frame[i]['Volume']
     obj.link=data_frame[i]['links']
-    #not complete
     node_list.append(obj)
+
+#print(node_list[0].link)
